@@ -68,8 +68,7 @@ export default function Novedades() {
       className="relative w-full overflow-hidden h-[580px] md:h-[640px]"
       style={{
         backgroundColor: nota.bg,
-        borderTop: `3px solid ${nota.border_top ?? 'transparent'}`,
-        transition: 'background-color 0.6s ease, border-color 0.3s ease',
+        transition: 'background-color 0.6s ease',
       }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
