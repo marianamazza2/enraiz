@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <filter id="patRough">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="dotPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#8c7054" opacity="0.15"/>
+    </pattern>
+  </defs>
+  
+  <!-- Subtle dot background -->
+  <rect width="800" height="800" fill="url(#dotPattern)"/>
+  
+  <g filter="url(#patRough)" opacity="0.12">
+    <!-- Scattered small leaves across the tile -->
+    
+    <!-- Leaf cluster 1 - top left -->
+    <path d="M80,120 C100,100 130,70 140,40 C150,10 140,-5 125,10 C110,25 90,60 80,95 C78,108 78,115 80,120Z" fill="#7b8255"/>
+    <path d="M100,150 C85,130 60,100 50,75 C40,50 50,35 65,45 C80,55 95,90 100,130Z" fill="#9da874" opacity="0.7"/>
+    
+    <!-- Leaf cluster 2 - top right -->
+    <path d="M650,80 C670,60 700,30 710,0 C720,-30 710,-45 695,-30 C680,-15 660,20 650,55 C648,68 648,75 650,80Z" fill="#8c7054" opacity="0.8"/>
+    
+    <!-- Leaf cluster 3 - center -->
+    <path d="M380,420 C400,400 430,370 440,340 C450,310 440,295 425,310 C410,325 390,360 380,395 C378,408 378,415 380,420Z" fill="#7b8255"/>
+    <path d="M420,440 C405,420 380,390 370,365 C360,340 370,325 385,335 C400,345 415,380 420,420Z" fill="#9da874" opacity="0.6"/>
+    
+    <!-- Small berries / dots scattered -->
+    <circle cx="200" cy="300" r="8" fill="#7b3437" opacity="0.5"/>
+    <circle cx="215" cy="315" r="5" fill="#a3585b" opacity="0.35"/>
+    <circle cx="190" cy="320" r="4" fill="#7b3437" opacity="0.3"/>
+    
+    <circle cx="600" cy="500" r="7" fill="#7b3437" opacity="0.4"/>
+    <circle cx="615" cy="515" r="4" fill="#a3585b" opacity="0.3"/>
+    
+    <circle cx="100" cy="600" r="6" fill="#8c7054" opacity="0.4"/>
+    <circle cx="115" cy="610" r="4" fill="#b09476" opacity="0.3"/>
+    
+    <!-- Leaf cluster 4 - bottom left -->
+    <path d="M150,700 C170,680 200,650 210,620 C220,590 210,575 195,590 C180,605 160,640 150,675 C148,688 148,695 150,700Z" fill="#7b8255" opacity="0.9"/>
+    
+    <!-- Leaf cluster 5 - bottom right -->
+    <path d="M680,680 C700,660 730,630 740,600 C750,570 740,555 725,570 C710,585 690,620 680,655 C678,668 678,675 680,680Z" fill="#8c7054" opacity="0.7"/>
+    <path d="M700,710 C685,690 660,660 650,635 C640,610 650,595 665,605 C680,615 695,650 700,690Z" fill="#b09476" opacity="0.5"/>
+    
+    <!-- Tiny flower suggestion - center right -->
+    <g transform="translate(550, 250)">
+      <path d="M0,0 C-15,-10 -35,-25 -40,-45 C-45,-65 -30,-70 -15,-55 C-5,-45 -2,-25 0,-5Z" fill="#7b3437" opacity="0.6"/>
+      <path d="M0,0 C15,-10 35,-25 40,-45 C45,-65 30,-70 15,-55 C5,-45 2,-25 0,-5Z" fill="#7b3437" opacity="0.6"/>
+      <path d="M0,-5 C-8,-18 -15,-35 -10,-48 C-5,-58 5,-58 10,-48 C15,-35 8,-18 0,-5Z" fill="#a3585b" opacity="0.5"/>
+      <circle cx="0" cy="-20" r="5" fill="#f4f5ec" opacity="0.4"/>
+      <circle cx="0" cy="-21" r="3" fill="#7b8255" opacity="0.5"/>
+    </g>
+    
+    <!-- Stems connecting elements -->
+    <path d="M80,125 C100,160 140,220 200,295" stroke="#5a6338" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M380,425 C400,460 440,500 500,530" stroke="#5a6338" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M550,270 C560,290 575,330 600,495" stroke="#5a6338" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M150,705 C170,730 200,750 250,760" stroke="#5a6338" stroke-width="1" fill="none" opacity="0.3"/>
+    
+    <!-- Speckles -->
+    <circle cx="300" cy="150" r="2" fill="#8c7054" opacity="0.3"/>
+    <circle cx="450" cy="600" r="2" fill="#7b8255" opacity="0.25"/>
+    <circle cx="700" cy="400" r="1.5" fill="#7b3437" opacity="0.2"/>
+    <circle cx="50" cy="450" r="2" fill="#b09476" opacity="0.25"/>
+    <circle cx="500" cy="100" r="1.5" fill="#7b8255" opacity="0.2"/>
+    <circle cx="350" cy="750" r="2" fill="#8c7054" opacity="0.2"/>
+    <circle cx="750" cy="200" r="1.5" fill="#7b3437" opacity="0.15"/>
+    <circle cx="250" cy="550" r="1.5" fill="#9da874" opacity="0.2"/>
+  </g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <filter id="plantRough">
+      <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="leafGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="8" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="gn"/>
+      <feComposite in="SourceGraphic" in2="gn" operator="in" result="masked"/>
+      <feBlend in="SourceGraphic" in2="masked" mode="screen"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#plantRough)">
+    <!-- Stem -->
+    <path d="M300,850 C300,800 295,720 290,650 C285,580 280,520 285,460 C290,400 298,340 300,280 C302,220 300,180 300,140" 
+      stroke="#5a6338" stroke-width="8" fill="none" stroke-linecap="round"/>
+    
+    <!-- Branch left lower -->
+    <path d="M290,600 C270,580 240,560 210,550" stroke="#5a6338" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Branch right lower -->
+    <path d="M292,520 C320,500 360,480 400,470" stroke="#5a6338" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Branch left mid -->
+    <path d="M288,430 C260,410 220,390 180,385" stroke="#5a6338" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Branch right mid -->
+    <path d="M296,350 C330,330 370,310 410,300" stroke="#5a6338" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Branch left upper -->
+    <path d="M298,270 C270,250 230,235 200,230" stroke="#5a6338" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- LEAVES - Large rubber plant style -->
+    
+    <!-- Leaf 1: bottom left - dark olive -->
+    <path d="M210,550 C180,520 130,470 110,420 C90,370 100,330 130,340 C160,350 190,400 210,450 C215,480 212,520 210,550Z" 
+      fill="#5a6338" opacity="0.9"/>
+    <!-- Leaf 1 highlight -->
+    <path d="M210,550 C195,520 160,470 145,430 C135,400 140,370 155,375 C170,380 195,420 210,470Z" 
+      fill="#7b8255" opacity="0.5"/>
+    <!-- Leaf 1 vein -->
+    <path d="M210,545 C185,505 150,450 125,400" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.25"/>
+    
+    <!-- Leaf 2: bottom right - olive -->
+    <path d="M400,470 C440,440 490,380 500,320 C510,260 490,220 460,240 C430,260 410,320 400,380 C395,420 398,450 400,470Z" 
+      fill="#7b8255" opacity="0.85"/>
+    <!-- Leaf 2 shadow -->
+    <path d="M400,470 C425,445 465,395 480,345 C490,305 480,270 465,280 C450,290 420,340 400,400Z" 
+      fill="#5a6338" opacity="0.4"/>
+    <!-- Leaf 2 vein -->
+    <path d="M402,465 C430,430 470,370 490,310" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.2"/>
+    
+    <!-- Leaf 3: mid left - large, verde bg tone -->
+    <path d="M180,385 C140,350 80,290 60,230 C40,170 55,120 90,135 C125,150 160,210 180,280 C190,330 185,365 180,385Z" 
+      fill="#7b8255" opacity="0.9"/>
+    <!-- Leaf 3 light area -->
+    <path d="M180,380 C155,350 110,295 90,245 C75,205 80,170 100,175 C120,180 155,230 175,300Z" 
+      fill="#9da874" opacity="0.45"/>
+    <!-- Leaf 3 vein -->
+    <path d="M178,380 C150,340 105,275 75,215" stroke="#f4f5ec" stroke-width="1.5" fill="none" opacity="0.2"/>
+    
+    <!-- Leaf 4: mid right -->
+    <path d="M410,300 C450,270 510,210 520,150 C530,90 510,55 480,70 C450,85 425,150 410,220 C405,260 408,285 410,300Z" 
+      fill="#5a6338" opacity="0.85"/>
+    <!-- Leaf 4 light -->
+    <path d="M412,295 C440,268 490,218 505,165 C515,120 505,90 490,100 C475,110 440,170 415,240Z" 
+      fill="#7b8255" opacity="0.5"/>
+    
+    <!-- Leaf 5: upper left - lighter -->
+    <path d="M200,230 C170,200 120,150 105,100 C90,50 105,20 130,30 C155,40 180,90 200,150 C208,190 205,215 200,230Z" 
+      fill="#9da874" opacity="0.8"/>
+    <!-- Leaf 5 shadow -->
+    <path d="M200,225 C180,200 145,160 130,120 C118,85 125,55 140,60 C155,65 180,110 198,170Z" 
+      fill="#7b8255" opacity="0.45"/>
+    
+    <!-- Top leaf - newest, lightest -->
+    <path d="M300,140 C280,110 250,60 260,30 C270,5 290,0 300,10 C310,0 330,5 340,30 C350,60 320,110 300,140Z" 
+      fill="#9da874" opacity="0.75"/>
+    <path d="M300,130 C290,105 275,65 280,40 C285,22 295,18 300,25Z" 
+      fill="#b5c08a" opacity="0.4"/>
+    
+    <!-- Pot suggestion at bottom -->
+    <path d="M260,850 L250,900 L350,900 L340,850" fill="#d4dbb8" opacity="0.35"/>
+    <rect x="245" y="835" width="110" height="20" rx="3" fill="#d4dbb8" opacity="0.4"/>
+  </g>
+</svg>

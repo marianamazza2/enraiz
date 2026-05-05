@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="900" height="800">
+  <defs>
+    <filter id="grainBlob">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="5" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="gn"/>
+      <feBlend in="SourceGraphic" in2="gn" mode="multiply"/>
+    </filter>
+    <filter id="softEdge">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#softEdge)">
+    <!-- Large background blob - verde light -->
+    <path d="M350,150 C480,80 650,100 720,220 C790,340 750,480 680,560 C610,640 500,680 380,650 C260,620 180,540 160,420 C140,300 220,220 350,150Z" 
+      fill="#9da874" opacity="0.35"/>
+    
+    <!-- Medium blob overlap - verde -->
+    <path d="M300,250 C400,180 550,200 600,300 C650,400 620,520 540,580 C460,640 340,620 280,540 C220,460 200,320 300,250Z" 
+      fill="#7b8255" opacity="0.45"/>
+    
+    <!-- Small accent blob - marron -->
+    <path d="M500,350 C560,310 640,330 660,400 C680,470 640,540 580,560 C520,580 460,550 440,480 C420,410 440,390 500,350Z" 
+      fill="#8c7054" opacity="0.3"/>
+    
+    <!-- Smaller floating blob top right -->
+    <path d="M650,120 C690,100 740,120 750,160 C760,200 730,240 690,250 C650,260 620,240 610,200 C600,160 610,140 650,120Z"
+      fill="#7b8255" opacity="0.25"/>
+    
+    <!-- Tiny accent blob -->
+    <path d="M200,500 C230,480 270,490 280,520 C290,550 270,580 240,590 C210,600 180,580 175,550 C170,520 170,520 200,500Z"
+      fill="#b09476" opacity="0.3"/>
+  </g>
+  
+  <!-- Grain texture -->
+  <rect width="900" height="800" fill="none" filter="url(#grainBlob)" opacity="0.08"/>
+</svg>

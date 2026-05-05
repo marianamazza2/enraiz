@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 900" width="500" height="900">
+  <defs>
+    <filter id="stampTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="4" seed="2" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="thresh">
+        <feFuncA type="discrete" tableValues="0 0 0.3 0.5 0.7 1 1 1"/>
+      </feComponentTransfer>
+      <feComposite in="SourceGraphic" in2="thresh" operator="in"/>
+    </filter>
+    <filter id="roughEdge2">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="4" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#roughEdge2)">
+    <!-- Main leaf body -->
+    <path d="M250,80 
+      C260,120 290,180 300,240 
+      C310,300 330,350 340,400 
+      C355,460 360,520 350,580 
+      C340,640 320,700 280,760 
+      C260,790 240,800 230,790 
+      C210,770 200,740 190,700 
+      C170,640 155,580 150,520 
+      C145,460 150,400 165,340 
+      C180,280 200,220 220,160 
+      C235,120 245,90 250,80Z" 
+      fill="#8c7054" opacity="0.9"/>
+    
+    <!-- Leaf texture holes - stamp effect -->
+    <g filter="url(#stampTexture)">
+      <path d="M250,80 
+        C260,120 290,180 300,240 
+        C310,300 330,350 340,400 
+        C355,460 360,520 350,580 
+        C340,640 320,700 280,760 
+        C260,790 240,800 230,790 
+        C210,770 200,740 190,700 
+        C170,640 155,580 150,520 
+        C145,460 150,400 165,340 
+        C180,280 200,220 220,160 
+        C235,120 245,90 250,80Z" 
+        fill="#b09476"/>
+    </g>
+    
+    <!-- Central vein -->
+    <path d="M250,90 C248,200 245,400 250,600 C252,700 260,770 265,790" 
+      stroke="#faf8f4" stroke-width="3" fill="none" opacity="0.5"/>
+    
+    <!-- Side veins left -->
+    <path d="M248,180 C230,200 200,220 175,230" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M247,260 C225,285 195,310 170,320" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M246,340 C220,370 190,400 165,410" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M247,420 C225,450 195,480 165,500" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M248,500 C230,530 205,555 180,570" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M250,580 C238,610 220,640 200,660" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M255,660 C245,685 235,710 220,730" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    
+    <!-- Side veins right -->
+    <path d="M252,180 C270,200 300,215 325,220" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M253,260 C275,285 305,305 330,310" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M254,340 C280,365 310,385 340,395" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M253,420 C275,450 305,475 340,490" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M252,500 C270,530 295,550 325,565" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M250,580 C262,610 280,635 305,650" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <path d="M255,660 C265,685 275,705 290,720" stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.35"/>
+    
+    <!-- Eaten/damaged patches for organic feel -->
+    <ellipse cx="200" cy="350" rx="18" ry="25" fill="#faf8f4" opacity="0.15"/>
+    <ellipse cx="310" cy="450" rx="14" ry="20" fill="#faf8f4" opacity="0.12"/>
+    <ellipse cx="220" cy="550" rx="12" ry="18" fill="#faf8f4" opacity="0.1"/>
+  </g>
+</svg>

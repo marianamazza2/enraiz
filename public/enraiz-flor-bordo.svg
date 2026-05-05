@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+  <defs>
+    <filter id="grain1" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blend"/>
+      <feComponentTransfer in="blend">
+        <feFuncA type="linear" slope="1"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="rough1">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="petalClip1">
+      <ellipse cx="400" cy="350" rx="280" ry="320"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Large petal back - dark bordo -->
+  <g filter="url(#rough1)">
+    <!-- Back petals -->
+    <path d="M400,420 C320,380 180,300 160,200 C140,100 220,50 300,80 C340,95 370,130 400,180 C430,130 460,95 500,80 C580,50 660,100 640,200 C620,300 480,380 400,420Z" fill="#5a2325" opacity="0.85"/>
+    
+    <!-- Left large petal -->
+    <path d="M400,450 C340,420 140,380 100,280 C60,180 80,120 160,140 C220,155 300,220 350,300 C320,260 250,180 240,140 C230,80 280,60 330,100 C380,140 400,280 400,450Z" fill="#7b3437" opacity="0.9"/>
+    
+    <!-- Right large petal -->
+    <path d="M400,450 C460,420 660,380 700,280 C740,180 720,120 640,140 C580,155 500,220 450,300 C480,260 550,180 560,140 C570,80 520,60 470,100 C420,140 400,280 400,450Z" fill="#7b3437" opacity="0.9"/>
+    
+    <!-- Top petal - lighter pink -->
+    <path d="M400,380 C360,340 280,220 290,140 C300,60 340,30 400,50 C460,30 500,60 510,140 C520,220 440,340 400,380Z" fill="#a3585b" opacity="0.8"/>
+    
+    <!-- Front petal overlay - deep -->
+    <path d="M400,500 C350,460 220,420 200,340 C180,260 240,230 300,260 C340,280 370,320 400,380 C430,320 460,280 500,260 C560,230 620,260 600,340 C580,420 450,460 400,500Z" fill="#8a3c3f" opacity="0.75"/>
+    
+    <!-- Lower petals with veins -->
+    <path d="M400,520 C360,490 260,460 240,380 C220,300 260,280 310,300 C340,312 370,340 400,400 Z" fill="#6b2a2d" opacity="0.85"/>
+    <path d="M400,520 C440,490 540,460 560,380 C580,300 540,280 490,300 C460,312 430,340 400,400 Z" fill="#6b2a2d" opacity="0.85"/>
+    
+    <!-- Vein details on front petals -->
+    <path d="M400,500 L380,420 M400,500 L360,440 M400,500 L340,460 M400,500 L420,420 M400,500 L440,440 M400,500 L460,460" stroke="#5a2325" stroke-width="1.5" fill="none" opacity="0.4"/>
+    
+    <!-- Center details -->
+    <ellipse cx="400" cy="420" rx="35" ry="25" fill="#f4f5ec" opacity="0.7"/>
+    <ellipse cx="400" cy="415" rx="20" ry="14" fill="#d4dbb8" opacity="0.8"/>
+    <ellipse cx="400" cy="412" rx="10" ry="8" fill="#7b8255" opacity="0.9"/>
+    
+    <!-- Stamens -->
+    <line x1="390" y1="410" x2="375" y2="385" stroke="#f4f5ec" stroke-width="1.5" opacity="0.6"/>
+    <line x1="400" y1="408" x2="400" y2="380" stroke="#f4f5ec" stroke-width="1.5" opacity="0.6"/>
+    <line x1="410" y1="410" x2="425" y2="385" stroke="#f4f5ec" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="375" cy="383" r="3" fill="#8c7054" opacity="0.7"/>
+    <circle cx="400" cy="378" r="3" fill="#8c7054" opacity="0.7"/>
+    <circle cx="425" cy="383" r="3" fill="#8c7054" opacity="0.7"/>
+  </g>
+  
+  <!-- Texture overlay for stamp effect -->
+  <rect width="800" height="900" fill="none" filter="url(#grain1)" opacity="0.15"/>
+</svg>

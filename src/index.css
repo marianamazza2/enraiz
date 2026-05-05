@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-bordo: #7b3437;
+  --color-verde-oliva: #7b8255;
+  --color-marron: #8c7054;
+  --color-crema: #faf8f4;
+  --color-verde-claro: #f4f5ec;
+  --color-rosa-suave: #f9f0f0;
+  --color-oscuro: #3a2e28;
+
+  /* Fonts */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: #faf8f4;
+  color: #3a2e28;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}

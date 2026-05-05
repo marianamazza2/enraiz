@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+  <defs>
+    <filter id="compRough">
+      <feTurbulence type="turbulence" baseFrequency="0.014" numOctaves="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="compGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="12" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="gn"/>
+      <feBlend in="SourceGraphic" in2="gn" mode="multiply"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#compRough)">
+    
+    <!-- === BACKGROUND ORGANIC BLOB - verde light === -->
+    <path d="M-50,500 C50,350 150,250 300,300 C450,350 500,250 550,350 C600,450 500,600 400,700 C300,800 100,800 0,700 C-50,650 -100,600 -50,500Z" 
+      fill="#9da874" opacity="0.25"/>
+    
+    <!-- === MEDIUM BLOB - crema/mint === -->
+    <path d="M200,650 C300,580 450,550 550,600 C650,650 680,750 600,820 C520,890 350,880 250,830 C150,780 100,720 200,650Z" 
+      fill="#d4dbb8" opacity="0.35"/>
+    
+    <!-- === LARGE LEAF - olive with stamp texture === -->
+    <g>
+      <!-- Leaf body -->
+      <path d="M80,300 C120,250 180,180 200,120 C220,60 200,20 170,40 C140,60 110,120 80,200 C65,255 70,285 80,300Z" 
+        fill="#7b8255" opacity="0.85" transform="rotate(-20, 150, 200)"/>
+      <!-- Leaf vein -->
+      <path d="M82,290 C110,240 155,160 185,95" 
+        stroke="#faf8f4" stroke-width="2" fill="none" opacity="0.2" transform="rotate(-20, 150, 200)"/>
+      <!-- Leaf highlight -->
+      <path d="M85,280 C105,245 140,180 160,130 C172,95 168,65 158,72 C148,80 120,140 90,220Z" 
+        fill="#9da874" opacity="0.4" transform="rotate(-20, 150, 200)"/>
+    </g>
+    
+    <!-- === SECOND LEAF - marron, overlapping === -->
+    <g>
+      <path d="M50,500 C80,440 130,370 155,310 C180,250 170,210 145,225 C120,240 90,300 65,380 C55,430 50,470 50,500Z" 
+        fill="#8c7054" opacity="0.7" transform="rotate(10, 100, 400)"/>
+      <path d="M52,490 C75,440 115,370 140,315" 
+        stroke="#faf8f4" stroke-width="1.5" fill="none" opacity="0.2" transform="rotate(10, 100, 400)"/>
+    </g>
+    
+    <!-- === MAIN FLOWER - bordo === -->
+    <g transform="translate(120, 580) scale(0.8)">
+      <!-- Back petals -->
+      <path d="M0,0 C-40,-30 -100,-80 -110,-140 C-120,-200 -80,-220 -40,-190 C-10,-170 -5,-120 0,-60Z" fill="#5a2325" opacity="0.7"/>
+      <path d="M0,0 C40,-30 100,-80 110,-140 C120,-200 80,-220 40,-190 C10,-170 5,-120 0,-60Z" fill="#5a2325" opacity="0.7"/>
+      
+      <!-- Main petals -->
+      <path d="M0,0 C-50,-20 -120,-50 -140,-110 C-160,-170 -130,-200 -90,-180 C-60,-165 -30,-120 0,-60Z" fill="#7b3437" opacity="0.9"/>
+      <path d="M0,0 C50,-20 120,-50 140,-110 C160,-170 130,-200 90,-180 C60,-165 30,-120 0,-60Z" fill="#7b3437" opacity="0.9"/>
+      
+      <!-- Top petal -->
+      <path d="M0,-40 C-25,-70 -50,-120 -40,-160 C-30,-200 -10,-210 0,-195 C10,-210 30,-200 40,-160 C50,-120 25,-70 0,-40Z" fill="#a3585b" opacity="0.75"/>
+      
+      <!-- Lower petal -->
+      <path d="M0,10 C-30,-5 -80,-15 -90,-50 C-100,-85 -70,-100 -40,-80 C-20,-68 -8,-40 0,-10Z" fill="#8a3c3f" opacity="0.8"/>
+      <path d="M0,10 C30,-5 80,-15 90,-50 C100,-85 70,-100 40,-80 C20,-68 8,-40 0,-10Z" fill="#8a3c3f" opacity="0.8"/>
+      
+      <!-- Petal veins -->
+      <path d="M0,5 L-20,-30 M0,5 L-35,-20 M0,5 L20,-30 M0,5 L35,-20" stroke="#5a2325" stroke-width="1" fill="none" opacity="0.3"/>
+      
+      <!-- Center -->
+      <ellipse cx="0" cy="-30" rx="20" ry="15" fill="#f4f5ec" opacity="0.65"/>
+      <ellipse cx="0" cy="-32" rx="12" ry="9" fill="#d4dbb8" opacity="0.7"/>
+      <ellipse cx="0" cy="-34" rx="6" ry="5" fill="#7b8255" opacity="0.8"/>
+      
+      <!-- Stamens -->
+      <line x1="-5" y1="-35" x2="-15" y2="-55" stroke="#f0ece4" stroke-width="1.2" opacity="0.5"/>
+      <line x1="0" y1="-36" x2="0" y2="-58" stroke="#f0ece4" stroke-width="1.2" opacity="0.5"/>
+      <line x1="5" y1="-35" x2="15" y2="-55" stroke="#f0ece4" stroke-width="1.2" opacity="0.5"/>
+      <circle cx="-15" cy="-57" r="2.5" fill="#b09476" opacity="0.6"/>
+      <circle cx="0" cy="-60" r="2.5" fill="#b09476" opacity="0.6"/>
+      <circle cx="15" cy="-57" r="2.5" fill="#b09476" opacity="0.6"/>
+    </g>
+    
+    <!-- === SMALL BUDS / BERRIES === -->
+    <circle cx="280" cy="720" r="12" fill="#7b3437" opacity="0.5"/>
+    <circle cx="310" cy="740" r="8" fill="#a3585b" opacity="0.4"/>
+    <circle cx="260" cy="750" r="6" fill="#7b3437" opacity="0.35"/>
+    
+    <!-- === DECORATIVE STEMS === -->
+    <path d="M120,620 C160,640 230,680 280,720" stroke="#5a6338" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M80,520 C90,540 100,570 120,590" stroke="#5a6338" stroke-width="1.5" fill="none" opacity="0.3"/>
+    
+    <!-- === SMALL FLOATING LEAF === -->
+    <path d="M350,400 C370,380 400,350 410,320 C420,290 410,275 395,285 C380,295 365,330 355,370 C352,385 350,395 350,400Z" 
+      fill="#7b8255" opacity="0.5"/>
+    
+    <!-- === TINY SPECKLES for organic feel === -->
+    <circle cx="180" cy="450" r="2" fill="#8c7054" opacity="0.3"/>
+    <circle cx="220" cy="420" r="1.5" fill="#7b8255" opacity="0.25"/>
+    <circle cx="300" cy="600" r="2.5" fill="#8c7054" opacity="0.2"/>
+    <circle cx="160" cy="700" r="2" fill="#7b3437" opacity="0.25"/>
+    <circle cx="400" cy="650" r="1.5" fill="#7b8255" opacity="0.2"/>
+    <circle cx="350" cy="550" r="2" fill="#b09476" opacity="0.2"/>
+    <circle cx="250" cy="500" r="1.5" fill="#7b3437" opacity="0.15"/>
+  </g>
+  
+  <!-- Subtle grain overlay -->
+  <rect width="900" height="900" fill="none" filter="url(#compGrain)" opacity="0.06"/>
+</svg>
