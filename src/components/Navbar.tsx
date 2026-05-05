@@ -1,25 +1,26 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 100)
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   return (
-    <motion.header
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-[#faf8f4]/95 backdrop-blur-md shadow-sm py-4'
           : 'bg-transparent py-6'
-      }`}
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      } ${visible ? 'opacity-100' : 'opacity-0'}`}
     >
       <div className="max-w-7xl mx-auto px-8 md:px-16 flex items-center justify-between">
 
@@ -60,6 +61,6 @@ export default function Navbar() {
           Ver productos
         </a>
       </div>
-    </motion.header>
+    </header>
   )
 }
